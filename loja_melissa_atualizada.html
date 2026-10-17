@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melissa - Loja Oficial | Sapatos com até 97% OFF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e Variáveis */
+        :root {
+            --primary: #000000;
+            --secondary: #ff6fa3;
+            --accent: #ffcc66;
+            --light: #ffffff;
+            --dark: #000000;
+            --gray: #f5f5f5;
+            --text: #333333;
+            --shadow: 0 8px 30px rgba(0,0,0,0.12);
+            --radius: 12px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 94%;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--primary);
+            color: var(--light);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 10px 16px;
+            border-radius: 24px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        .search-bar input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .search-bar i {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .cart-btn {
+            position: relative;
+            cursor: pointer;
+            color: var(--light);
+            font-size: 1.3rem;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background: var(--secondary);
+            color: var(--light);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(255,255,255,0));
+            border-radius: var(--radius);
+            padding: 30px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            box-shadow: var(--shadow);
+            min-height: 320px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 28px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--light);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0,0,0,0.05);
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        }
+        
+        /* Filtros */
+        .filters {
+            margin: 30px 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .filter-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .filter-select {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+            background: var(--light);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        /* Seções de Produtos */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0 20px;
+        }
+        
+        .section-title {
+            color: var(--dark);
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        
+        .view-all {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .carousel-hint {
+            text-align: center;
+            color: var(--dark);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .carousel-hint i {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+            40% {transform: translateX(5px);}
+            60% {transform: translateX(3px);}
+        }
+        
+        .products-carousel-container {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .products-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 12px 0 24px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .products-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Cartões de Produto */
+        .product-card {
+            flex: 0 0 auto;
+            width: 260px;
+            background: var(--light);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            scroll-snap-align: start;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+        }
+        
+        .product-badge {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            background: var(--secondary);
+            color: var(--light);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: 0 6px 18px rgba(255,111,163,0.18);
+            z-index: 2;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            background: linear-gradient(90deg, #ff3333, #ff6666);
+            color: var(--light);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: 0 6px 18px rgba(255,51,51,0.18);
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+        
+        .product-info {
+            padding: 16px;
+        }
+        
+        .product-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1rem;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        
+        .product-description {
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .current-price {
+            font-weight: 900;
+            color: var(--dark);
+            font-size: 1.15rem;
+        }
+        
+        .original-price {
+            font-size: 0.9rem;
+            color: #777;
+            text-decoration: line-through;
+        }
+        
+        .size-selector {
+            margin-bottom: 12px;
+        }
+        
+        .size-selector select {
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            background-color: var(--light);
+            font-size: 0.9rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .add-to-cart {
+            background: linear-gradient(90deg, var(--secondary), #ff9dc6);
+            color: var(--light);
+            padding: 9px 14px;
+            border-radius: 999px;
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            width: 100%;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255,111,163,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 40px 0;
+            background: var(--gray);
+            color: var(--text);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* Modal do Carrinho */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 1200;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 50%;
+            height: 100vh;
+            background: var(--light);
+            box-shadow: -6px 0 30px rgba(0,0,0,0.18);
+            z-index: 1300;
+            transition: right 0.32s cubic-bezier(.2,.9,.3,1);
+            display: flex;
+            flex-direction: column;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+        
+        .cart-modal.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 18px;
+            background: var(--primary);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-top-left-radius: 16px;
+        }
+        
+        .cart-body {
+            padding: 18px;
+            flex: 1;
+            overflow: auto;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 12px;
+            border-radius: 10px;
+            background: var(--light);
+            margin-bottom: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+        
+        .cart-item img {
+            width: 80px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-info h4 {
+            font-size: 0.98rem;
+            margin-bottom: 6px;
+        }
+        
+        .cart-price {
+            color: var(--dark);
+            font-weight: 800;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .quantity-controls button {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            border: none;
+            background: #f0f0f0;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        
+        .remove-btn {
+            background: transparent;
+            border: none;
+            color: #c94b4b;
+            cursor: pointer;
+            margin-top: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .cart-footer {
+            padding: 18px;
+            border-top: 1px solid #f0f0f0;
+            position: sticky;
+            bottom: 0;
+            background: var(--light);
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+            border-bottom-left-radius: 16px;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background: var(--primary);
+            color: var(--light);
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .checkout-note {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-top: 8px;
+            text-align: center;
+        }
+        
+        /* Modal de Zoom para Imagens */
+        .zoom-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1400;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .zoom-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .zoom-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .zoom-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .close-zoom {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .cart-modal {
+                width: 60%;
+                right: -60%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cart-modal {
+                width: 75%;
+                right: -75%;
+            }
+            
+            .hero {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 15px 0 0;
+                max-width: 100%;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 720px) {
+            .cart-modal {
+                width: 85%;
+                right: -85%;
+            }
+            
+            .product-card {
+                width: 220px;
+            }
+            
+            .product-image {
+                height: 210px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cart-modal {
+                width: 90%;
+                right: -90%;
+            }
+            
+            .product-card {
+                width: 200px;
+            }
+            
+            .product-image {
+                height: 190px;
+            }
+            
+            .product-info {
+                padding: 12px;
+            }
+            
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">melissa<span></span></div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos..." id="search-input">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="header-icons">
+                    <div id="cart-icon" class="cart-btn" aria-label="Abrir carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <div class="cart-count" id="cart-count">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero" aria-label="Destaque">
+            <div class="hero-content">
+                <h1 class="hero-title">MODELOS COM MAIS DE 90% DE DESCONTO</h1>
+                <p class="hero-subtitle">💖 MELISSALE: Cupom TUDO9 aplicado! Frete grátis para todo Brasil</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="scrollToProducts()">Ver Produtos</button>
+                    <button class="btn btn-secondary" onclick="openCart()">Meu Carrinho</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://ansiosasonline.com.br/cdn/shop/files/Banner_Mobile_Cozy_M_Lover_Platform_Ansiosas_Online_Melissa_7bb38a0c-7565-4b5d-b45e-c532155d367c.png?format=pjpg&v=1758317862&width=1100" alt="Sapatos Melissa em destaque">
+            </div>
+        </section>
+
+        <div class="filters">
+            <div class="filter-group">
+                <span class="filter-label">Filtrar por:</span>
+                <select class="filter-select" id="category-filter">
+                    <option value="all">Todas as categorias</option>
+                    <option value="sandalia">Sandálias</option>
+                    <option value="rasteirinha">Rasteirinhas</option>
+                    <option value="sapato">Sapatos</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Ordenar por:</span>
+                <select class="filter-select" id="sort-filter">
+                    <option value="featured">Mais vendidos</option>
+                    <option value="newest">Mais recentes</option>
+                    <option value="price-low">Menor preço</option>
+                    <option value="price-high">Maior preço</option>
+                </select>
+            </div>
+        </div>
+
+        <section id="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Mais Vendidos</h2>
+                <a href="#" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="carousel-hint">
+                <i class="fas fa-arrow-right"></i>
+                <span>Arraste para o lado para ver mais produtos</span>
+            </div>
+
+            <div class="products-carousel-container">
+                <div class="products-carousel" id="best-sellers-carousel">
+                    <!-- Produtos serão inseridos dinamicamente via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Novidades</h2>
+                <a href="#" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="carousel-hint">
+                <i class="fas fa-arrow-right"></i>
+                <span>Arraste para o lado para ver mais produtos</span>
+            </div>
+
+            <div class="products-carousel-container">
+                <div class="products-carousel" id="new-arrivals-carousel">
+                    <!-- Produtos serão inseridos dinamicamente via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Institucional</h3>
+                    <ul>
+                        <li><a href="#">Sobre nós</a></li>
+                        <li><a href="#">Nossas Lojas</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Ajuda</h3>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Formas de Pagamento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contato@usarmelissabr.com</li>
+                        <li><i class="fas fa-phone"></i> (11) 4004-1822</li>
+                        <li><i class="fas fa-clock"></i> Seg a Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Cadastre-se e receba ofertas exclusivas</p>
+                    <div class="search-bar" style="margin-top: 10px;">
+                        <input type="text" placeholder="Seu e-mail">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Melissa - Loja Oficial | Todos os direitos reservados. | CNPJ: 89.850.341/0001-60</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay & Carrinho -->
+    <div id="overlay" class="overlay"></div>
+    <aside id="cart-modal" class="cart-modal" aria-hidden="true">
+        <div class="cart-header">
+            <strong>Seu Carrinho</strong>
+            <button id="close-cart" aria-label="Fechar" style="background:transparent;border:none;color:#fff;font-size:22px;cursor:pointer">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items">
+            <!-- Itens do carrinho serão inseridos dinamicamente -->
+        </div>
+        <div class="cart-footer">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                <div style="font-weight:800">Total</div>
+                <div id="cart-total" style="font-weight:900;color:var(--dark)">R$ 0,00</div>
+            </div>
+            <button id="checkout" class="checkout-btn">Finalizar Compra com PIX</button>
+            <div class="checkout-note">Clique em finalizar para pagar com PIX.</div>
+        </div>
+    </aside>
+    
+    <!-- Modal de Zoom para Imagens -->
+    <div id="zoom-modal" class="zoom-modal">
+        <div class="zoom-content">
+            <button id="close-zoom" class="close-zoom">&times;</button>
+            <img id="zoom-image" src="" alt="Imagem ampliada">
+        </div>
+    </div>
+
+    <script>
+        // DADOS DOS PRODUTOS - FÁCIL DE ADICIONAR MAIS
+        const products = [
+            {
+              "id": "p1",
+              "name": "Melissa Free Platform Thong (COR BRANCO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/1a09636e-0027-47a0-bbf3-9e29b4232fa3-Captura%20de%20tela_13-10-2025_61726_cdn.shopify.com.jpeg",
+              "category": "rasteirinha",
+              "featured": true,
+              "newArrival": false,
+              "badge": "Mais vendido"
+            },
+            {
+              "id": "p2",
+              "name": "Melissa Free Platform Thong (COR PRETO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/203d8596-9d9f-48ef-8e21-acc9bbe0cf58-Captura%20de%20tela_13-10-2025_64723_cdn.shopify.com.jpeg",
+              "category": "rasteirinha",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p3",
+              "name": "Melissa Free Platform Slide Glitter (COR PRATA)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/59a934e0-eb50-4e23-9848-9f81c708ba6b-Captura%20de%20tela_13-10-2025_65630_images-bucket-nvd.s3.amazonaws.com.jpeg",
+              "category": "sandalia",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p4",
+              "name": "Melissa Free Platform Slide (COR VERMELHO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/c51d8787-267b-4aa4-bfcf-580fbd6449ef-Captura%20de%20tela_13-10-2025_734_cdn.shopify.com.jpeg",
+              "category": "sandalia",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p5",
+              "name": "Melissa Kick Off Sandal (COR BEGE)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/7b10f5c8-e814-42d8-8a70-009f3dff8244-Captura%20de%20tela_13-10-2025_7754_cdn.shopify.com.jpeg",
+              "category": "sandalia",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p6",
+              "name": "Melissa Towny (COR VERDE)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/ec407103-e159-4525-9ecf-af7bdac71c25-Captura%20de%20tela_13-10-2025_71043_cdn.shopify.com.jpeg",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p7",
+              "name": "Melissa Free Platform Slide Bronze (COR MARROM)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/4bfec210-1ba1-4489-9696-088c9f3801dc-41IP+zXQ-9L._AC_SX575_.jpg",
+              "category": "sandalia",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p8",
+              "name": "Melissa Free Muse Platform",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/6ed69fa1-9720-4969-9f4c-04c0d067441f-Captura%20de%20tela_25-11-2025_52947_meninashoes.vtexassets.com.jpeg",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p9",
+              "name": "Melissa Cozy M Lover Platform Marrom",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/9d21883d-b65b-427b-8d3e-8fe391b3caa9-Captura%20de%20tela_25-11-2025_53444_melisseiras.vtexassets.com.jpeg",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p10",
+              "name": "Melissa Edge Preta",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://dlzpblyjxiqfa.cloudfront.net/2243447975/products/woj84g1cjuome0fpdliunpdnc",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p11",
+              "name": "Melissa Edge Translúcida",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://dlzpblyjxiqfa.cloudfront.net/2243447975/products/2jocbgrzu9uik3wsywpspbah1",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p12",
+              "name": "Melissa Pump Platform (COR BRANCA)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://m.media-amazon.com/images/I/41ttaOlEz1L._AC_SX575_.jpg",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p13",
+              "name": "Melissa Free Thong Wedge (COR LILÁS)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://melissa.co.id/cdn/shop/files/108_81a5e3ba-b632-4fa5-a2f8-f7194305264b_grande.png?v=1764915033",
+              "category": "sapato",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p14",
+              "name": "Melissa Up Platform (COR CARAMELO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://meninashoes.vtexassets.com/arquivos/ids/535054-800-auto?v=638950196485570000&width=800&height=auto&aspect=true",
+              "category": "sandalia",
+              "featured": true,
+              "newArrival": false
+            },
+            {
+              "id": "p15",
+              "name": "Melissa Kick Off Sandal (COR BRANCA)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://meninashoes.vtexassets.com/arquivos/ids/435469-800-auto?v=638881718945100000&width=800&height=auto&aspect=true",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p16",
+              "name": "Melissa Kick Off Sandal (COR MARROM)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://http2.mlstatic.com/D_NQ_NP_988458-MLB88145089082_072025-O-melissa-kick-off-sandal-marrom.webp",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p17",
+              "name": "Melissa Free Line Platform (COR PRETO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9i5c20ot31so5nvjq5wl0%2Fphoto-0?alt=media&token=e4a4a57f-a4ee-4e83-b75d-5c923fa883e0",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p18",
+              "name": "Melissa Free Line Platform (COR BRANCO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9kk3k0otj1so50rb3hjgz%2Fphoto-0?alt=media&token=f4fd41c6-f01a-40dc-b0bc-24b5182c73ff",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p19",
+              "name": "Melissa Free Line Platform (COR ROSA)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9fuaf0lid1rp334adev7d%2Fphoto-0?alt=media&token=99522ac3-9169-4fa1-b0c9-0937726a0061",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p20",
+              "name": "Melissa Free Platform Thong (COR AZUL)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9dcsl0jo71zo5c5df6f70%2Fphoto-0?alt=media&token=11b6bd07-d6cc-4150-b8c8-752b51f7632d",
+              "category": "rasteirinha",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p21",
+              "name": "Melissa Party Heel (COR GLITTER LILÁS CLARO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9xivu0p2o1so589q22wof%2Fphoto-0?alt=media&token=78eeb13c-2d9a-417e-9010-4c977405f6fb",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p22",
+              "name": "Melissa Party Heel (COR ROSA)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9vhr00kr91yp3j6qh3hnq%2Fphoto-0?alt=media&token=e8874223-3b77-4d65-99e1-7683f71ca528",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p23",
+              "name": "Melissa Platform Slide Muse Estampa",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9ozkh0lkz1rp3lfe3fdk1%2Fphoto-0?alt=media&token=5f769791-853d-446a-b210-267f7c695e76",
+              "category": "sapato",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p24",
+              "name": "Melissa Free Platform Slide (COR ROSA)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9m8590ouk1so5vvrt4gy5%2Fphoto-0?alt=media&token=b26ad135-9595-4ccc-a5a9-dacc979534be",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p25",
+              "name": "Melissa Platform Slide (COR VERMELHO ESCURO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmog9t3v90kq01yp3w9t2pz0j%2Fphoto-0?alt=media&token=ffcd850e-7865-4c84-be88-37746eac5aa6",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p26",
+              "name": "Melissa Free Thong Wedge (COR MARROM CLARO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmod5vs6600ha1rqxes3vlbol%2Fphoto-0?alt=media&token=da4ec905-d266-4300-a00b-6d5183adea0d",
+              "category": "sapato",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p27",
+              "name": "Melissa Free Platform Slide (COR PRETO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://r2.paymaker.com.br/products/images/4f7d1dae-def5-4499-a88c-aeb1ac473c57-Captura%20de%20tela_13-10-2025_7431_cdn.shopify.com.jpeg",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            },
+            {
+              "id": "p28",
+              "name": "Melissa Kick Off Sandal (COR VERMELHO)",
+              "description": "ESTOQUE LIMITADO",
+              "price": 9.99,
+              "originalPrice": 159.9,
+              "image": "https://firebasestorage.googleapis.com/v0/b/gatewayfy-46726.appspot.com/o/painel.appcnpay.com%2Fproducts%2Fcmod5ytw600j11rqx8r8dpb4n%2Fphoto-0?alt=media&token=3682a2c0-62f1-4abc-8e3d-5fed26744b8e",
+              "category": "sandalia",
+              "featured": false,
+              "newArrival": true,
+              "badge": "Novo"
+            }
+        ];
+
+        // STATE
+        const cart = [];
+        const overlay = document.getElementById('overlay');
+        const cartModal = document.getElementById('cart-modal');
+        const cartCount = document.getElementById('cart-count');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalEl = document.getElementById('cart-total');
+        const zoomModal = document.getElementById('zoom-modal');
+        const zoomImage = document.getElementById('zoom-image');
+        const closeZoom = document.getElementById('close-zoom');
+        const bestSellersCarousel = document.getElementById('best-sellers-carousel');
+        const newArrivalsCarousel = document.getElementById('new-arrivals-carousel');
+        const searchInput = document.getElementById('search-input');
+        const categoryFilter = document.getElementById('category-filter');
+        const sortFilter = document.getElementById('sort-filter');
+        
+        // Link do IronPay
+        const IRONPAY_LINK = 'https://compraseguraonline.org.ua/c/8ce58c866a';
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            setupEventListeners();
+        });
+
+        // Renderizar produtos
+        function renderProducts() {
+            // Filtrar produtos mais vendidos
+            const featuredProducts = products.filter(product => product.featured);
+            
+            // Filtrar novidades
+            const newArrivals = products.filter(product => product.newArrival);
+            
+            // Renderizar mais vendidos
+            bestSellersCarousel.innerHTML = '';
+            featuredProducts.forEach(product => {
+                bestSellersCarousel.appendChild(createProductCard(product));
+            });
+            
+            // Renderizar novidades
+            newArrivalsCarousel.innerHTML = '';
+            newArrivals.forEach(product => {
+                newArrivalsCarousel.appendChild(createProductCard(product));
+            });
+        }
+
+        // Criar card de produto
+        function createProductCard(product) {
+            const card = document.createElement('article');
+            card.className = 'product-card';
+            
+            const discountPercentage = Math.round((1 - product.price / product.originalPrice) * 100);
+            
+            card.innerHTML = `
+                ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                <div class="discount-badge">${discountPercentage}% desconto</div>
+                <div class="product-image" data-image="${product.image}">
+                    <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.style.visibility='hidden';">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">${product.name}</div>
+                    <div class="product-description">${product.description}</div>
+                    <div class="price-container">
+                        <div class="current-price">R$ ${product.price.toFixed(2).replace('.',',')}</div>
+                        <div class="original-price">R$ ${product.originalPrice.toFixed(2).replace('.',',')}</div>
+                    </div>
+                    <div class="size-selector">
+                        <select class="size-select" data-id="${product.id}">
+                            <option value="">Escolha numeração</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                        </select>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Adicionar</button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Configurar event listeners
+        function setupEventListeners() {
+            // Carrinho
+            document.getElementById('cart-icon').addEventListener('click', openCart);
+            document.getElementById('close-cart').addEventListener('click', closeCart);
+            overlay.addEventListener('click', closeCart);
+            
+            // Zoom de imagens
+            closeZoom.addEventListener('click', closeZoomModal);
+            zoomModal.addEventListener('click', (e) => {
+                if (e.target === zoomModal) {
+                    closeZoomModal();
+                }
+            });
+            
+            // Busca
+            searchInput.addEventListener('input', handleSearch);
+            
+            // Filtros
+            categoryFilter.addEventListener('change', handleFilterChange);
+            sortFilter.addEventListener('change', handleFilterChange);
+            
+            // Finalizar compra
+            document.getElementById('checkout').addEventListener('click', handleCheckout);
+        }
+
+        // Funções do carrinho
+        function openCart(){ 
+            cartModal.classList.add('active'); 
+            overlay.classList.add('active'); 
+        }
+        
+        function closeCart(){ 
+            cartModal.classList.remove('active'); 
+            overlay.classList.remove('active'); 
+        }
+        
+        function openZoom(imageSrc) {
+            zoomImage.src = imageSrc;
+            zoomModal.classList.add('active');
+        }
+        
+        function closeZoomModal() {
+            zoomModal.classList.remove('active');
+        }
+        
+        function scrollToProducts() {
+            document.getElementById('products-section').scrollIntoView({behavior: 'smooth'});
+        }
+
+        // Adicionar ao carrinho (delegation)
+        document.addEventListener('click', function(e) {
+            // Adicionar ao carrinho
+            if (e.target.classList.contains('add-to-cart')) {
+                const id = e.target.dataset.id;
+                const name = e.target.dataset.name;
+                const price = parseFloat(e.target.dataset.price);
+                const image = e.target.dataset.image;
+                
+                // Obter a numeração selecionada
+                const sizeSelect = document.querySelector(`.size-select[data-id="${id}"]`);
+                const selectedSize = sizeSelect ? sizeSelect.value : '';
+                
+                // Verificar se foi selecionada uma numeração
+                if (!selectedSize) {
+                    alert('Por favor, escolha uma numeração antes de adicionar ao carrinho.');
+                    return;
+                }
+
+                const existing = cart.find(i => i.id === id && i.size === selectedSize);
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({id, name, price, image, qty: 1, size: selectedSize});
+                }
+
+                updateCartUI();
+                openCart();
+                
+                e.target.textContent = "✓ Adicionado";
+                setTimeout(() => e.target.textContent = "Adicionar", 1200);
+            }
+            
+            // Zoom de imagem
+            if (e.target.closest('.product-image')) {
+                const imageSrc = e.target.closest('.product-image').getAttribute('data-image');
+                openZoom(imageSrc);
+            }
+        });
+
+        // Atualizar interface do carrinho
+        function updateCartUI() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let items = 0;
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text)">Seu carrinho está vazio</div>';
+            } else {
+                cart.forEach(item => {
+                    total += item.price * item.qty;
+                    items += item.qty;
+
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <div class="cart-price">R$ ${item.price.toFixed(2).replace('.',',')}</div>
+                            <div>Numeração: ${item.size}</div>
+                            <div class="quantity-controls">
+                                <button class="qty-decrease" data-id="${item.id}" data-size="${item.size}">-</button>
+                                <div style="min-width:30px;text-align:center">${item.qty}</div>
+                                <button class="qty-increase" data-id="${item.id}" data-size="${item.size}">+</button>
+                                <button class="remove-btn" data-id="${item.id}" data-size="${item.size}">Remover</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(div);
+                });
+            }
+
+            cartCount.innerText = items;
+            cartTotalEl.innerText = `R$ ${total.toFixed(2).replace('.',',')}`;
+
+            // Controles de quantidade
+            document.querySelectorAll('.qty-increase').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const size = btn.dataset.size;
+                    const item = cart.find(i => i.id === id && i.size === size); 
+                    if (item) { 
+                        item.qty += 1; 
+                        updateCartUI(); 
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.qty-decrease').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const size = btn.dataset.size;
+                    const item = cart.find(i => i.id === id && i.size === size);
+                    if (item) {
+                        if (item.qty > 1) {
+                            item.qty -= 1;
+                        } else {
+                            const index = cart.findIndex(x => x.id === id && x.size === size);
+                            if (index >= 0) cart.splice(index, 1);
+                        }
+                        updateCartUI();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.id;
+                    const size = btn.dataset.size;
+                    const index = cart.findIndex(x => x.id === id && x.size === size);
+                    if (index >= 0) cart.splice(index, 1);
+                    updateCartUI();
+                });
+            });
+        }
+
+        // Busca
+        function handleSearch() {
+            applyProductFilters();
+        }
+
+        // Busca, categoria e ordenação aplicadas em conjunto.
+        function handleFilterChange() {
+            applyProductFilters();
+        }
+
+        function applyProductFilters() {
+            const searchTerm = searchInput.value.trim().toLocaleLowerCase('pt-BR');
+            const category = categoryFilter.value;
+            const sort = sortFilter.value;
+            let filteredProducts = products.filter(product => {
+                const matchesSearch = !searchTerm || product.name.toLocaleLowerCase('pt-BR').includes(searchTerm) || product.description.toLocaleLowerCase('pt-BR').includes(searchTerm);
+                const matchesCategory = category === 'all' || product.category === category;
+                return matchesSearch && matchesCategory;
+            });
+            if (sort === 'newest') {
+                filteredProducts.sort((a, b) => Number(b.newArrival) - Number(a.newArrival));
+            } else if (sort === 'price-low') {
+                filteredProducts.sort((a, b) => a.price - b.price || a.name.localeCompare(b.name, 'pt-BR'));
+            } else if (sort === 'price-high') {
+                filteredProducts.sort((a, b) => b.price - a.price || a.name.localeCompare(b.name, 'pt-BR'));
+            } else {
+                filteredProducts.sort((a, b) => Number(b.featured) - Number(a.featured));
+            }
+            updateProductDisplay(filteredProducts);
+        }
+
+        // Atualizar exibição de produtos
+        function updateProductDisplay(filteredProducts) {
+            // Limpar carrosséis
+            bestSellersCarousel.innerHTML = '';
+            newArrivalsCarousel.innerHTML = '';
+            
+            // Separar produtos por categoria
+            const featuredProducts = filteredProducts.filter(product => product.featured);
+            const newArrivals = filteredProducts.filter(product => product.newArrival);
+            
+            // Adicionar produtos aos carrosséis
+            featuredProducts.forEach(product => {
+                bestSellersCarousel.appendChild(createProductCard(product));
+            });
+            
+            newArrivals.forEach(product => {
+                newArrivalsCarousel.appendChild(createProductCard(product));
+            });
+            
+            // Se não houver produtos em uma categoria, mostrar mensagem
+            if (featuredProducts.length === 0) {
+                bestSellersCarousel.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text)">Nenhum produto encontrado</div>';
+            }
+            
+            if (newArrivals.length === 0) {
+                newArrivalsCarousel.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text)">Nenhum produto encontrado</div>';
+            }
+        }
+
+        // Finalizar compra
+        function handleCheckout() {
+            if (cart.length === 0) { 
+                alert('Seu carrinho está vazio. Adicione produtos antes de finalizar.'); 
+                return; 
+            }
+            
+            // Redireciona para o IronPay
+            window.location.href = IRONPAY_LINK;
+        }
+
+        // Inicializar carrinho vazio
+        updateCartUI();
+    </script>
+</body>
+</html>
